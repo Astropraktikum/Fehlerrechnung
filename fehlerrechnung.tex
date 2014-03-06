@@ -64,11 +64,165 @@
 \newcommand{\C}{\mathbb{C}}
 
 %Klickbare Referenzen
-\usepackage[hidelinks]{hyperref}
+%\usepackage[hidelinks]{hyperref}
 
 \begin{document}
 
+\section{Aufgabe 1}
+\subsection{Teilaufgabe a)}
 
+Die Formel zur Berechnung von $ d $ ist $ d = 1/ \pi $. Daraus ergibt sich $ \frac{\partial d}{\partial \pi} = - \frac{1}{\pi^2} $. Laut Fehlerfortpflanzung gilt:
+
+\begin{equation}
+\delta d = \sqrt{\frac{1}{\pi^4 \cdot \delta \pi^2}} = \vert \frac{\delta \pi}{\pi^2} \vert
+\label{form:fehlerfort1}
+\end{equation}
+
+Damit ergibt sich
+
+\begin{equation}
+d = \frac{1}{0.3107} pc = 3.219 pc
+\end{equation}
+
+und
+
+\begin{equation}
+\delta d = \vert \frac{0.0009}{0.3107^2} \vert pc = 0.010 pc
+\end{equation}
+
+Die Entfernung des Sterns ist also:
+
+\begin{equation}
+d = (3.219 \pm 0.010 ) pc
+\end{equation}
+
+\subsection{Teilaufgabe b)}
+Aufgrund des relativen Fehlers ergibt sich für $ \pi = (1.0 \pm 0.6) mas $. Damit ergibt sich
+
+\begin{equation}
+d = \frac{1}{0.001} pc = 1000 pc
+\end{equation}
+
+und mit \eqref{form:fehlerfort1}
+
+\begin{equation}
+\delta d = \vert \frac{0.0006}{0.001^2} \vert pc = 600 pc
+\end{equation}
+
+Die Enfernung von Deneb ist damit:
+
+\begin{equation}
+d = (1.0 \pm 0.6 ) kpc
+\end{equation}
+
+\subsection{Teilaufgabe c)}
+\subsubsection{Teilaufgabe (i)}
+%$ \log_{10} (5) $
+Die Beziehung $ (m - M)_V - A_V = 5 \cdot \log_{10} (d) - 5 $ lässt sich umformen zu:
+
+\begin{equation}
+d = 10 \cdot {10}^{\frac{m_V - M_V - A_V}{5}}
+\end{equation}
+
+Für die Berechnung des Fehlers wird berechnet:
+
+\begin{equation}
+\frac{\partial d}{\partial M_V} = -2 \cdot \ln (10) \cdot {10}^{\frac{m_V - M_V - A_V}{5}} = - \frac{\ln (10)}{5} \cdot d
+\label{form:fehlerfort2}
+\end{equation}
+
+Mit \eqref{form:fehlerfort2} ergibt sich dann für die Fehlerfortpflanzung:
+
+\begin{equation}
+\delta d = \sqrt{(- \frac{\ln (10)}{5} \cdot d)^2 \cdot {\delta M_V}^2} = \frac{\ln (10)}{5} \cdot \vert d \cdot \delta M_V \vert
+\end{equation}
+
+So ergibt sich die Entfernung von Deneb zu:
+
+\begin{equation}
+d = 10 \cdot {10}^{\frac{1.25 - (-8.27) - 0.113}{5}} = 761 pc
+\end{equation}
+
+Für den Fehler erhält man:
+
+\begin{equation}
+\delta d = \frac{\ln (10)}{5} \cdot \vert 761 \cdot 0.23 \vert pc = 90 pc
+\end{equation}
+
+Der Abstand von Deneb ergibt sich also mit dieser Methode zu:
+
+\begin{equation}
+d = (761 \pm 90) pc
+\end{equation}
+
+\subsubsection{Teilaufgabe (ii)}
+Das Stefan-Boltzmann-Gesetz lässt sich umformen zu:
+
+\begin{equation}
+R = \sqrt{\frac{L}{4 \pi \sigma}} \cdot \frac{1}{T_{eff}^2}
+\label{form:boltzmann}
+\end{equation}
+
+Um \eqref{form:boltzmann} in den Einheiten $ L_{\odot} $ und $ T^2_{eff,\odot} $ ausdrücken, wird \eqref{form:boltzmann} so erweitert, dass sich ergibt:
+
+\begin{equation}
+R = \sqrt{\frac{L/L_{\odot}}{4 \pi \sigma}} \cdot \frac{1}{T^2_{eff}/T^2_{eff,\odot}} \cdot \frac{\sqrt{L_{\odot}}}{T^2_{eff,\odot}}
+\end{equation}
+
+Definiert man $ L[L_{\odot}] := L/L_{\odot} $, $ T_{eff}[T_{eff,\odot}] := T_{eff}/T_{eff,\odot} $ und $ R[R_{\odot}] := R/R_{\odot} $ als Leuchtkraft, effektive Temperatur und Radius in Sonneneinheiten, so ergibt sich:
+
+\begin{equation}
+R[R_{\odot}] = \frac{\sqrt{L[L_{\odot}]}}{T^2_{eff}[T_{eff,\odot}]} \cdot \frac{\sqrt{L_{\odot}}}{\sqrt{4 \pi \sigma} \cdot T^2_{eff,\odot} \cdot R_{\odot}}
+\label{form:stefanUmgestellt}
+\end{equation}
+
+Mit dem Stefan-Boltzmann-Gesetz (Gl. \eqref{form:boltzmann}) folgt, dass:
+
+\begin{equation}
+\frac{\sqrt{L_{\odot}}}{\sqrt{4 \pi \sigma} \cdot T^2_{eff,\odot} \cdot R_{\odot}} = 1
+\end{equation}
+
+Man erhält dann aus \eqref{form:stefanUmgestellt} die Formel des Radius in Abhängigkeit der Leuchtkraft und der Effektivtemperatur in Einheiten der Sonne:
+
+\begin{equation}
+R[R_{\odot}] = \frac{\sqrt{L[L_{\odot}]}}{T^2_{eff}[T_{eff,\odot}]}
+\end{equation}
+
+\newpage
+
+Für die Fehlerfortpflanzung berechnet man
+
+\begin{equation}
+\frac{\partial R}{\partial T_{eff}} = - \frac{2 \sqrt{L}}{T^3_{eff}}
+\label{form:fehlerfortStefan1}
+\end{equation}
+
+und
+
+\begin{equation}
+\frac{\partial R}{\partial L} = \frac{1}{2 \sqrt{L} \cdot T^2_{eff}}
+\label{form:fehlerfortStefan2}
+\end{equation}
+
+Aus \eqref{form:fehlerfortStefan1} und \eqref{form:fehlerfortStefan2} folgt dann:
+
+\begin{equation}
+\delta R = \sqrt{(\frac{\partial R}{\partial T_{eff}})^2 \cdot \delta T^2_{eff} + (\frac{\partial R}{\partial L})^2 \cdot \delta L^2} = \sqrt{\frac{4 L}{T^6_{eff}} \cdot \delta T^2_{eff} + \frac{1}{4 L T^4_{eff}} \cdot \delta L^2}
+\end{equation}
+
+Für den Radius von Deneb ergibt sich dann aus den vorigen Überlegungen:
+
+\begin{equation}
+R[R_{\odot}] = \frac{\sqrt{1.8 \cdot 10^5}} {(\frac{8530}{5778})^2} = 195
+\end{equation}
+
+und
+
+\begin{equation}
+\delta R = \sqrt{\frac{4 \cdot 1.8 \cdot 10^5}{({\frac{8530}{5778}})^6} \cdot (\frac{80}{5778})^2 + \frac{1}{4 \cdot 1.8 \cdot 10^5 \cdot ({\frac{8530}{5778}})^4} \cdot (0.4 \cdot 10^5)^2} = 22
+\end{equation}
+
+%\delta R = \sqrt{13.33303+467.84449}
 
 \newpage
 
