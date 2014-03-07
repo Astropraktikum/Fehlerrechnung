@@ -228,7 +228,69 @@ Damit ergibt sich für den Radius von Deneb als Funktion von Leuchtkraft und Eff
 \delta R[R_{\odot}] = 195 \pm 22
 \end{equation}
 
-\newpage
+
+\section{Aufgabe 2} 
+\subsection{a)} 
+Die erste Messung werde mit $P_{orb, 1}$ bezeichnet, die zweite mit $P_{orb,2}$ bezeichnet. 
+Es gilt 
+\begin{equation}
+\Delta P_{orb} = P_{orb, 1} - P_{orb, 2} = 24.31704 d - 24.316 d = (0.0010 \pm 0.0011) d.
+\end{equation} 
+
+Für den Fehler ergibt sich: 
+\begin{equation}
+\delta (\Delta P_{orb}) = \sqrt{(\frac{\partial \Delta P_{orb}}{\partial P_{orb, 1}})^2 \cdot (\delta P_{orb, 1})^2 + (\frac{\partial \Delta P_{orb}}{\partial P_{orb, 2}})^2 \cdot (\delta P_{orb, 2})^2} = \sqrt{(\delta P_{orb, 1})^2 + (\delta P_{orb, 2})^2} = 0.0011 d
+\end{equation}
+
+subsection{b)}
+Diese Messung von 2010 sei mit $P_{orb, 1}$ bezeichnet. 
+Analog ergibt sich: 
+
+\begin{equation}
+\Delta P_{orb} = P_{orb, 1} - P_{orb, 3} = 24.31704 d - 24.31617 d = (0.00087 \pm 0.00010) d.
+\end{equation}
+
+Für den Fehler ergibt sich: 
+\begin{equation}
+\delta (\Delta P_{orb}) = \sqrt{(\frac{\partial \Delta P_{orb}}{\partial P_{orb, 1}})^2 \cdot (\delta P_{orb, 1})^2 + (\frac{\partial \Delta P_{orb}}{\partial P_{orb, 3}})^2 \cdot (\delta P_{orb, 3})^2} = \sqrt{(\delta P_{orb, 1})^2 + (\delta P_{orb, 3})^2} = 0.00010 d
+\end{equation}
+
+\section{Aufgabe 3}
+\subsection{a)}
+Es ist ein $\kappa$ gesucht, sodass
+\begin{equation}
+\int_{-\infty}^{\infty} \kappa \cdot exp(-\frac{(x-M)^2}{2\sigma^2}) dx = 1.
+\end{equation}
+
+Es gilt aufgrund der Symmetrie der Gaußkurve und mittels passender Substitution:
+\begin{equation}
+\int_{-\infty} ^{\infty} \kappa \cdot exp(-\frac{(x-M)^2}{2\sigma^2}) dx = \int_{-\infty} ^{\infty} \kappa \cdot exp(-\frac{(x-M)^2}{2\sigma^2}) d(x-M) = \kappa \cdot \sqrt {2\pi} \cdot \sigma = 1. 
+\end{equation}
+
+Daraus ergibt sich: 
+\begin{equation}
+\kappa \cdot \sqrt{2\pi} \cdot \sigma = 1
+\end{equation} oder
+
+
+\begin{equation}
+\kappa = \frac{1}{\sqrt{2\cdot \pi} \cdot \sigma}.
+\end{equation}
+
+\begin{comment}
+
+\subsection{b)}
+Da in diesem Fall n = 1, folgt aus dem angegebenen Fehler bei $P_{orb, 1} = (24.31704 \pm 0.00006) d$ eine Standardabweichung von ebenfalls $0.00006 d$. \\
+Die Wahrscheinlichkeit $\beta$, dass sich ein Messwert innerhalb des Intervalls $ (M-\Delta. M+ \Delta)$ befindet, beträgt also 
+
+\begin{equation}
+\beta = \int_{M - \Delta}^{M + \Delta} f(x) dx, 
+\end{equation}
+wobei 
+\begin{equation}
+f(x) = \frac{1}{\sqrt{2\cdot \pi} \cdot \sigma} \cdot exp(-\frac{(x-M)}{2\sigma^2}). 
+\end{equation}
+
 
 \begin{thebibliography}{9}
 \bibitem[Bec]{kmann} BECKMANN, Dieter. Astrophysik. C.C.Buchner, 2011.
@@ -236,5 +298,5 @@ Damit ergibt sich für den Radius von Deneb als Funktion von Leuchtkraft und Eff
 
 
 \end{thebibliography}
-
+\end{comment}
 \end{document}
