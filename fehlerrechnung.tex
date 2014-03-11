@@ -74,33 +74,33 @@
 Die Formel zur Berechnung von $ d $ ist $ d = 1/ \pi $. Daraus ergibt sich $ \frac{\partial d}{\partial \pi} = - \frac{1}{\pi^2} $. Laut Fehlerfortpflanzung gilt:
 
 \begin{equation}
-\delta d = \sqrt{\frac{1}{\pi^4 \cdot \delta \pi^2}} = \vert \frac{\delta \pi}{\pi^2} \vert
+\delta d = \sqrt{\frac{1}{\pi^4 \cdot \delta \pi^2}} = \left| \frac{\delta \pi}{\pi^2} \right|
 \label{form:fehlerfort1}
 \end{equation}
 
 Damit ergibt sich
 
 \begin{equation}
-d = \frac{1}{0.3107} pc = 3.219 pc
+d = \frac{1}{0.3107} pc = 3.2185\ \mathrm{pc} \approx 3.219 \ \mathrm{pc}
 \end{equation}
 
 und
 
 \begin{equation}
-\delta d = \vert \frac{0.0009}{0.3107^2} \vert pc = 0.010 pc
+\delta d = \left| \frac{0.0009}{0.3107^2} \right| pc = 0.00932 \ \mathrm{pc} \approx 0.010\ \mathrm{pc}
 \end{equation}
 
 Die Entfernung des Sterns ist also:
 
 \begin{equation}
-d = (3.219 \pm 0.010 ) pc
+d = 3.219 \pm 0.010  pc
 \end{equation}
 
 \subsection{Teilaufgabe b)}
 Aufgrund des relativen Fehlers ergibt sich für $ \pi = (1.0 \pm 0.6) mas $. Damit ergibt sich
 
 \begin{equation}
-d = \frac{1}{0.001} pc = 1000 pc
+d = \frac{1}{0.001} \mathrm{pc} = 1000 \mathrm{pc}
 \end{equation}
 
 und mit \eqref{form:fehlerfort1}
@@ -112,7 +112,7 @@ und mit \eqref{form:fehlerfort1}
 Die Enfernung von Deneb ist damit:
 
 \begin{equation}
-d = (1.0 \pm 0.6 ) kpc
+d = 1.0 \pm 0.6 \mathrm{kpc}
 \end{equation}
 
 \subsection{Teilaufgabe c)}
@@ -134,19 +134,19 @@ Für die Berechnung des Fehlers wird berechnet:
 Mit \eqref{form:fehlerfort2} ergibt sich dann für die Fehlerfortpflanzung:
 
 \begin{equation}
-\delta d = \sqrt{(- \frac{\ln (10)}{5} \cdot d)^2 \cdot {\delta M_V}^2} = \frac{\ln (10)}{5} \cdot \vert d \cdot \delta M_V \vert
+\delta d = \sqrt{(- \frac{\ln (10)}{5} \cdot d)^2 \cdot {\delta M_V}^2} = \frac{\ln (10)}{5} \cdot \left| d \cdot \delta M_V \right|
 \end{equation}
 
 So ergibt sich die Entfernung von Deneb zu:
 
 \begin{equation}
-d = 10 \cdot {10}^{\frac{1.25 - (-8.27) - 0.113}{5}} = 761 pc
+d = 10 \cdot {10}^{\frac{1.25 - (-8.27) - 0.113}{5}} = 761.03 \mathrm{pc}
 \end{equation}
 
 Für den Fehler erhält man:
 
 \begin{equation}
-\delta d = \frac{\ln (10)}{5} \cdot \vert 761 \cdot 0.23 \vert pc = 90 pc
+\delta d = \frac{\ln (10)}{5} \cdot \vert 761 \cdot 0.23 \vert pc = 80.60  \mathrm{pc} \approx 90 \mathrm{pc}
 \end{equation}
 
 Der Abstand von Deneb ergibt sich also mit dieser Methode zu:
@@ -163,7 +163,7 @@ R = \sqrt{\frac{L}{4 \pi \sigma}} \cdot \frac{1}{T_{eff}^2}
 \label{form:boltzmann}
 \end{equation}
 
-Um \eqref{form:boltzmann} in den Einheiten $ L_{\odot} $ und $ T^2_{eff,\odot} $ ausdrücken, wird \eqref{form:boltzmann} so erweitert, dass sich ergibt:
+Um \eqref{form:boltzmann} in den Einheiten $ L_{\odot} $ und $ T^2_{eff,\odot} $ auszudrücken, wird \eqref{form:boltzmann} so erweitert, dass sich ergibt:
 
 \begin{equation}
 R = \sqrt{\frac{L/L_{\odot}}{4 \pi \sigma}} \cdot \frac{1}{T^2_{eff}/T^2_{eff,\odot}} \cdot \frac{\sqrt{L_{\odot}}}{T^2_{eff,\odot}}
@@ -176,7 +176,7 @@ R[R_{\odot}] = \frac{\sqrt{L[L_{\odot}]}}{T^2_{eff}[T_{eff,\odot}]} \cdot \frac{
 \label{form:stefanUmgestellt}
 \end{equation}
 
-Mit dem Stefan-Boltzmann-Gesetz (Gl. \eqref{form:boltzmann}) folgt, dass:
+Mit dem Stefan-Boltzmann-Gesetz (Gl. \ref{form:boltzmann}) folgt, dass:
 
 \begin{equation}
 \frac{\sqrt{L_{\odot}}}{\sqrt{4 \pi \sigma} \cdot T^2_{eff,\odot} \cdot R_{\odot}} = 1
@@ -213,13 +213,13 @@ Aus \eqref{form:fehlerfortStefan1} und \eqref{form:fehlerfortStefan2} folgt dann
 Für den Radius von Deneb ergibt sich dann aus den vorigen Überlegungen:
 
 \begin{equation}
-R[R_{\odot}] = \frac{\sqrt{1.8 \cdot 10^5}} {(\frac{8530}{5778})^2} = 195
+R[R_{\odot}] = \frac{\sqrt{1.8 \cdot 10^5}} {(\frac{8530}{5778})^2} = 194.67  \approx 195
 \end{equation}
 
 und
 
 \begin{equation}
-\delta R[R_{\odot}] = \sqrt{\frac{4 \cdot 1.8 \cdot 10^5}{({\frac{8530}{5778}})^6} \cdot (\frac{80}{5778})^2 + \frac{1}{4 \cdot 1.8 \cdot 10^5 \cdot ({\frac{8530}{5778}})^4} \cdot (0.4 \cdot 10^5)^2} = 22
+\delta R[R_{\odot}] = \sqrt{\frac{4 \cdot 1.8 \cdot 10^5}{({\frac{8530}{5778}})^6} \cdot (\frac{80}{5778})^2 + \frac{1}{4 \cdot 1.8 \cdot 10^5 \cdot ({\frac{8530}{5778}})^4} \cdot (0.4 \cdot 10^5)^2} = 21.936 \approx 22
 \end{equation}
 
 Damit ergibt sich für den Radius von Deneb als Funktion von Leuchtkraft und Effektivtemperatur in Sonneneinheiten:
@@ -234,38 +234,38 @@ Damit ergibt sich für den Radius von Deneb als Funktion von Leuchtkraft und Eff
 Die erste Messung werde mit $P_{orb, 1}$ bezeichnet, die zweite mit $P_{orb,2}$ bezeichnet. 
 Es gilt 
 \begin{equation}
-\Delta P_{orb} = P_{orb, 1} - P_{orb, 2} = 24.31704 d - 24.316 d = (0.0010 \pm 0.0011) d.
+\Delta P_{orb,A} = P_{orb, 1} - P_{orb, 2} = 24.31704 \mathrm{d} - 24.316 \mathrm{d} =  0.00104 \ \mathrm{d} \approx 0.0010 \pm 0.0011\ \mathrm{d}.
 \end{equation} 
 
 Für den Fehler ergibt sich: 
-\begin{equation}
-\delta (\Delta P_{orb}) = \sqrt{(\frac{\partial \Delta P_{orb}}{\partial P_{orb, 1}})^2 \cdot (\delta P_{orb, 1})^2 + (\frac{\partial \Delta P_{orb}}{\partial P_{orb, 2}})^2 \cdot (\delta P_{orb, 2})^2} = \sqrt{(\delta P_{orb, 1})^2 + (\delta P_{orb, 2})^2} = 0.0011 d
-\end{equation}
+\begin{align}
+\delta (\Delta P_{orb,A}) &= \sqrt{(\frac{\partial \Delta P_{orb,A}}{\partial P_{orb, 1}})^2 \cdot (\delta P_{orb, 1})^2 + (\frac{\partial \Delta P_{orb,A}}{\partial P_{orb, 2}})^2 \cdot (\delta P_{orb, 2})^2} \nonumber\\&= \sqrt{(\delta P_{orb, 1})^2 + (\delta P_{orb, 2})^2} \nonumber\\&= 0.001002 \ \mathrm{d} \approx 0.0011\ \mathrm{d}
+\end{align}
 
-subsection{b)}
+\subsection{b)}
 Diese Messung von 2010 sei mit $P_{orb, 1}$ bezeichnet. 
 Analog ergibt sich: 
 
 \begin{equation}
-\Delta P_{orb} = P_{orb, 1} - P_{orb, 3} = 24.31704 d - 24.31617 d = (0.00087 \pm 0.00010) d.
+\Delta P_{orb,B} = P_{orb, 1} - P_{orb, 3} = 24.31704\ \mathrm{d} - 24.31617 \ \mathrm{d} = (0.00087 \pm 0.00010) \mathrm{d}.
 \end{equation}
 
 Für den Fehler ergibt sich: 
-\begin{equation}
-\delta (\Delta P_{orb}) = \sqrt{(\frac{\partial \Delta P_{orb}}{\partial P_{orb, 1}})^2 \cdot (\delta P_{orb, 1})^2 + (\frac{\partial \Delta P_{orb}}{\partial P_{orb, 3}})^2 \cdot (\delta P_{orb, 3})^2} = \sqrt{(\delta P_{orb, 1})^2 + (\delta P_{orb, 3})^2} = 0.00010 d
-\end{equation}
+\begin{align}
+\delta (\Delta P_{orb,B}) &= \sqrt{(\frac{\partial \Delta P_{orb,B}}{\partial P_{orb, 1}})^2 \cdot (\delta P_{orb, 1})^2 + (\frac{\partial \Delta P_{orb,B}}{\partial P_{orb, 3}})^2 \cdot (\delta P_{orb, 3})^2} \nonumber\\&= \sqrt{(\delta P_{orb, 1})^2 + (\delta P_{orb, 3})^2} \nonumber\\&= 0.0000922\ \mathrm{d} \approx 0.0001 \ \mathrm{d}
+\end{align}
 
 \section{Aufgabe 3}
 \subsection{a)}
 Es ist ein $\kappa$ gesucht, sodass
 \begin{equation}
-\int_{-\infty}^{\infty} \kappa \cdot exp(-\frac{(x-M)^2}{2\sigma^2}) dx = 1.
+\int_{-\infty}^{\infty} f(x) dx = \int_{-\infty}^{\infty} \kappa \cdot exp(-\frac{(x-M)^2}{2\sigma^2}) dx = 1.
 \end{equation}
 
 Es gilt aufgrund der Symmetrie der Gaußkurve und mittels passender Substitution:
-\begin{equation}
-\int_{-\infty} ^{\infty} \kappa \cdot exp(-\frac{(x-M)^2}{2\sigma^2}) dx = \int_{-\infty} ^{\infty} \kappa \cdot exp(-\frac{(x-M)^2}{2\sigma^2}) d(x-M) = \kappa \cdot \sqrt {2\pi} \cdot \sigma = 1. 
-\end{equation}
+\begin{align}
+\int_{-\infty} ^{\infty} \kappa \cdot exp(-\frac{(x-M)^2}{2\sigma^2}) dx &= \int_{-\infty} ^{\infty} \kappa \cdot exp(-\frac{(x-M)^2}{2\sigma^2}) d(x-M) \nonumber\\&= 2 \cdot \int_{0} ^{\infty} \kappa \cdot exp(-\frac{(x-M)^2}{2\sigma^2}) d(x-M) \nonumber\\&= \kappa \cdot \sqrt {2\pi} \cdot \sigma = 1. 
+\end{align}
 
 Daraus ergibt sich: 
 \begin{equation}
@@ -277,21 +277,20 @@ Daraus ergibt sich:
 \kappa = \frac{1}{\sqrt{2\cdot \pi} \cdot \sigma}.
 \end{equation}
 
-\begin{comment}
+
 
 \subsection{b)}
-Da in diesem Fall n = 1, folgt aus dem angegebenen Fehler bei $P_{orb, 1} = (24.31704 \pm 0.00006) d$ eine Standardabweichung von ebenfalls $0.00006 d$. \\
-Die Wahrscheinlichkeit $\beta$, dass sich ein Messwert innerhalb des Intervalls $ (M-\Delta. M+ \Delta)$ befindet, beträgt also 
+Zur Lösung dieser Aufgabe werden die Differenzen $\Delta P_{orb,A}$ und $\Delta P_{orb,B}$ und die in Teilaufgabe 2b) angegebenen Fehler verwendet, die in diesem Fall mangels weiterer Daten als Standardabweichung aufgefasst werden.
+Der Lösung liegt die Betrachtung einer Gauß-Verteilung um den Mittelwert 0 und mit der Standardabweichung $\delta (\Delta P_{orb,A})$ bzw. $\delta (\Delta P_{orb,B})$ zugrunde. Als gesuchte Wahrscheinlichkeit wird nun der Bereich der Gaußkurve mit einer Abweichung von mehr als $\Delta P_{orb,A}$ bzw. $\Delta P_{orb,B}$ angesehen. Diese Wahrscheinlichkeit $\alpha$ ergibt sich über die entsprechende Fläche zu: 
 
 \begin{equation}
-\beta = \int_{M - \Delta}^{M + \Delta} f(x) dx, 
+\alpha = \int_{-\infty} ^{-\Delta P_{orb,A}} f(x) dx + \int_{\Delta P_{orb,A}} ^{\infty} f(x) dx.
 \end{equation}
-wobei 
-\begin{equation}
-f(x) = \frac{1}{\sqrt{2\cdot \pi} \cdot \sigma} \cdot exp(-\frac{(x-M)}{2\sigma^2}). 
-\end{equation}
+Aufgrund der in a) vorgenommenen Normierung kann 
 
 
+
+\begin{comment}
 \begin{thebibliography}{9}
 \bibitem[Bec]{kmann} BECKMANN, Dieter. Astrophysik. C.C.Buchner, 2011.
 \bibitem[Ort]{szeit} Wikipedia: Ortszeit. Online im Internet: URL: http://de.wikipedia.org/wiki/Ortszeit (Stand: 01.03.2014). 
