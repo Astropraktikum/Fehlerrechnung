@@ -259,7 +259,7 @@ Für den Fehler ergibt sich:
 \subsection{a)}
 Es ist ein $\kappa$ gesucht, sodass
 \begin{equation}
-\int_{-\infty}^{\infty} f(x) dx = \int_{-\infty}^{\infty} \kappa \cdot exp(-\frac{(x-M)^2}{2\sigma^2}) dx = 1.
+\int_{-\infty}^{\infty} \kappa \cdot exp(-\frac{(x-M)^2}{2\sigma^2}) dx = 1.
 \end{equation}
 
 Es gilt aufgrund der Symmetrie der Gaußkurve und mittels passender Substitution:
@@ -275,18 +275,39 @@ Daraus ergibt sich:
 
 \begin{equation}
 \kappa = \frac{1}{\sqrt{2\cdot \pi} \cdot \sigma}.
+\label{eq_1}
 \end{equation}
 
 
 
 \subsection{b)}
-Zur Lösung dieser Aufgabe werden die Differenzen $\Delta P_{orb,A}$ und $\Delta P_{orb,B}$ und die in Teilaufgabe 2b) angegebenen Fehler verwendet, die in diesem Fall mangels weiterer Daten als Standardabweichung aufgefasst werden.
-Der Lösung liegt die Betrachtung einer Gauß-Verteilung um den Mittelwert 0 und mit der Standardabweichung $\delta (\Delta P_{orb,A})$ bzw. $\delta (\Delta P_{orb,B})$ zugrunde. Als gesuchte Wahrscheinlichkeit wird nun der Bereich der Gaußkurve mit einer Abweichung von mehr als $\Delta P_{orb,A}$ bzw. $\Delta P_{orb,B}$ angesehen. Diese Wahrscheinlichkeit $\alpha$ ergibt sich über die entsprechende Fläche zu: 
+Zur Lösung dieser Aufgabe werden die Differenzen $\Delta P_{orb,A}$ und $\Delta P_{orb,B}$ und die in Teilaufgabe 2b) angegebenen Fehler verwendet, die in diesem Fall mangels weiterer Daten als Standardabweichungen aufgefasst werden.
+Der Lösung liegt die Betrachtung einer Gauß-Verteilung um den Mittelwert 0 und mit der Standardabweichung $\delta (\Delta P_{orb,A})$ bzw. $\delta (\Delta P_{orb,B})$ zugrunde. 
+Diese ergibt sich damit zu:
+\begin{equation}
+f(x) := \kappa \cdot exp(-\frac{x^2}{2\sigma^2}). 
+\end{equation} 
+Als gesuchte Wahrscheinlichkeit wird nun der Bereich der Gaußkurve mit einer Abweichung von mehr als $\Delta P_{orb,A}$ bzw. $\Delta P_{orb,B}$ angesehen. Diese Wahrscheinlichkeit $\alpha$ ergibt sich über die entsprechende Fläche zu: 
 
 \begin{equation}
-\alpha = \int_{-\infty} ^{-\Delta P_{orb,A}} f(x) dx + \int_{\Delta P_{orb,A}} ^{\infty} f(x) dx.
+\alpha = \int_{-\infty} ^{-\Delta P_{orb}} f(x) dx + \int_{\Delta P_{orb}} ^{\infty} f(x) dx.
 \end{equation}
-Aufgrund der in a) vorgenommenen Normierung kann 
+Aufgrund der in a) vorgenommenen Normierung kann dies umgeschrieben werden zu: 
+
+\begin{equation}
+\alpha = 1 - \int_{-\Delta P_{orb}} ^{\Delta P_{orb}} f(x) dx = 1- 2\cdot \int_{0} ^{\Delta P_{orb}} \kappa \cdot exp(-\frac{x^2}{2\sigma^2}) dx. 
+\end{equation}
+Mittels $ y = \frac{x}{\sqrt{2} \cdot \sigma}$ und unter Berücksichtigung von \eqref{eq_1} ergibt sich:
+\begin{equation}
+\alpha = 1- 2\cdot \int_{0} ^{\frac{\Delta P_{orb}}{\sqrt{2}\cdot \sigma}} \kappa \cdot exp(-y^2) \cdot \sqrt{2} \cdot \sigma dy = 1- 2\cdot \int_{0} ^{\frac{\Delta P_{orb}}{\sqrt{2}\cdot \sigma}} exp(-y^2) \cdot \frac{1}{\sqrt{\pi}}\cdot \sigma dy = 1- \mathrm{erf}(\frac{\Delta P_{orb}}{\sqrt{2}\cdot \sigma}). 
+\end{equation}
+Diese Integrale sind leider analytisch nicht lösbar, sodass sie mittels eines Befehls in ISIS gelöst werden. 
+Es ergibt sich im Fall a) zunächst $\frac{\Delta P_{orb,A}}{\sqrt{2} \cdot \delta (\Delta P_{orb,A})} = \frac{0.00104}{\sqrt{2} \cdot 0.001002} = 0.73392$ und in b) $\frac{(\Delta P_{orb,B})}{\sqrt{2} \cdot \delta (\Delta P_{orb,B})} = \frac{0.00087}{\sqrt{2} \cdot 0.0000922} = 6.6723$. 
+Für die Wahrscheinlichkeiten ergeben sich dann: 
+\begin{equation}
+\alpha_1 = 1- \mathrm{erf}(0.73392) = 0.29931 \approx 0.3. 
+\end{equation}
+Für $\alpha_2$ ergibt sich eine Wahrscheinlichkeit, die ISIS als 0 ausgibt. Tatsächlich ist diese natürlich ungleich Null, aber verschwindend klein. 
 
 
 
